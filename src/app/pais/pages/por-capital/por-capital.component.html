@@ -1,0 +1,33 @@
+
+<div class="animate__animated animate__bounce">
+    <h2>Por Capital</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col-9">
+            <app-entrada
+                (onEnter)="buscar($event)"
+                placeholderH="Buscar Capital..">
+            </app-entrada>
+        </div>
+
+        <div class="col-3">
+            <span> Paises: {{this.cantPaises}}</span>
+            
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+<div *ngIf="hayError" 
+    class="alert alert-danger">
+    No se encontró el termino {{termino | uppercase}}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-pais-tabla [paisesH]="paises"></app-pais-tabla>
+     
+    </div>
+</div>
