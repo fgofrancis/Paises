@@ -34,8 +34,8 @@
         </div>
     </div>
 
-    <h3>Traducciones</h3>
-    <div class="row">
+    <!-- <h3>Traducciones</h3> -->
+    <!-- <div class="row">
         <div class="col">
             <span class="badge bg-primary mr-1">{{pais.translations.rus.common}}</span>
             <span class="badge bg-primary mr-1">{{pais.translations.deu.common}}</span>
@@ -52,11 +52,21 @@
             <span class="badge bg-primary mr-1">{{pais.translations.swe.common}}</span>
             <span class="badge bg-primary mr-1">{{pais.translations.hrv.common}}</span>
         </div>
-    </div>
+    </div> -->
 
     <!-- <pre class="mt-5">
         {{pais | json}}
         {{pais.name.common}}
     </pre> -->
+    <h3> Mapa </h3>
+    <div class="row">
+        <div class="col">
+            <app-mapa [latitud]="latitud"
+                      [longitud]="longitud" 
+                      [nombre]="nombre">
+            </app-mapa>
+
+        </div>
+    </div>
 
 </ng-template>

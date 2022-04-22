@@ -15,8 +15,11 @@ import { PaisService } from '../../services/pais.service';
 })
 export class VerPaisComponent implements OnInit {
  
-  pais!:Country;
-
+  public pais!:Country;
+  public latitud!:number;
+  public longitud!:number;
+  public nombre!:string;
+  
   constructor( 
       private activatedRoute: ActivatedRoute,
       private _paisService  : PaisService) { }
@@ -30,7 +33,13 @@ export class VerPaisComponent implements OnInit {
         // tap(console.log)
         // tap(resp => console.log(resp))
       )      
-      .subscribe(pais => this.pais = pais[0]);
+      // .subscribe(pais => this.pais = pais[0]);
+      .subscribe(pais => {
+        this.pais = pais[0];
+        this.latitud = pais[0].latlng[0]; 
+        this.longitud = pais[0].latlng[1];
+        this.nombre= pais[0].name.common;
+      });
 
    /* Realizaremos este codio con RxJS,  ver arriba*/
     // this.activatedRoute.params
